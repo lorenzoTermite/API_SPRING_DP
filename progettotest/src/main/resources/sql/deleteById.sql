@@ -1,0 +1,1 @@
+DELETE FROM  tseeui02.t_nz_dp_re WHERE id = ?

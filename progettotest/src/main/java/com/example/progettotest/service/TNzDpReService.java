@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import com.example.progettotest.dao.TNzDpReDao;
 import com.example.progettotest.model.TNzDpRe;
-
+import java.sql.Date;
 @Service
 public class TNzDpReService {
 
@@ -36,7 +36,7 @@ public class TNzDpReService {
     }
 
     //esegui query select all
-    public List<TNzDpRe> getAllRecords() {
-        return tnzDpReDao.findAll();
+    public List<TNzDpRe> getAllRecords(String referenceDate) {
+        return tnzDpReDao.findAll( referenceDate);
     }
 }

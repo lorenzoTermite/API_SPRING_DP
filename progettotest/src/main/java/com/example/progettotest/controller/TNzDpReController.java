@@ -3,12 +3,17 @@ package com.example.progettotest.controller;
 import com.example.progettotest.service.TNzDpReService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.progettotest.model.TNzDpRe;
 import java.util.List;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.constraints.Pattern;
+
 @RestController
 @RequestMapping("/api/tnz-dp-re")
 public class TNzDpReController {
@@ -48,10 +53,12 @@ public class TNzDpReController {
     }
 
     // Endpoint per recuperare tutti i record
-    @GetMapping("/all")
-    @Operation(summary = "Get all TNzDpRe records")
-    public ResponseEntity<List<TNzDpRe>> getAllRecords() {
-        List<TNzDpRe> records = tnzDpReService.getAllRecords();
+    @GetMapping("/all/{referenceDate}")
+
+    @Operation(summary = "Get all TNzDpRe records by reference date")
+    public ResponseEntity<List<TNzDpRe>> getAllRecords(
+            @PathVariable  String referenceDate) {
+        List<TNzDpRe> records = tnzDpReService.getAllRecords(referenceDate);
         return ResponseEntity.ok(records);
     }
 }

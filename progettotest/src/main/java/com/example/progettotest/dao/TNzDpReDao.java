@@ -3,6 +3,7 @@ package com.example.progettotest.dao;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,13 +12,14 @@ import java.util.List;
 import com.example.progettotest.model.TNzDpRe;
 import javax.sql.DataSource;
 import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 
 @Repository
 public class TNzDpReDao {
 
     private final DataSource dataSource;
-
+    @Autowired
     public TNzDpReDao(DataSource dataSource) {
         this.dataSource = dataSource;
     }
@@ -49,7 +51,14 @@ public class TNzDpReDao {
 
     // Trova record per ID
     public TNzDpRe findById(Long id) {
-        String sql = "SELECT * FROM  tseeui02.t_nz_dp_re WHERE id = ?";
+      // 🔹 Leggo il file SQL direttamente qui
+    String sql = "";
+    try {
+        ClassPathResource resource = new ClassPathResource("sql/getById.sql");
+        sql = new String(resource.getInputStream().readAllBytes());
+    } catch (IOException e) {
+        throw new RuntimeException("Errore nel caricamento del file SQL", e);
+    }
         try (Connection conn = dataSource.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
@@ -72,7 +81,14 @@ public class TNzDpReDao {
 
     // Cancella record per ID
     public void deleteById(Long id) {
-        String sql = "DELETE FROM  tseeui02.t_nz_dp_re WHERE id = ?";
+          // 🔹 Leggo il file SQL direttamente qui
+    String sql = "";
+    try {
+        ClassPathResource resource = new ClassPathResource("sql/deteleById.sql");
+        sql = new String(resource.getInputStream().readAllBytes());
+    } catch (IOException e) {
+        throw new RuntimeException("Errore nel caricamento del file SQL", e);
+    }
         try (Connection conn = dataSource.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
@@ -84,13 +100,24 @@ public class TNzDpReDao {
     }
 
     //ESEGUI QUERY SELECT ALL
-    public List<TNzDpRe> findAll() {
+    public List<TNzDpRe> findAll(String referenceDate) {
+      
         List<TNzDpRe> records = new ArrayList<>();
-        String sql = "SELECT * FROM  tseeui02.t_nz_dp_re";
+       String sql = "";
+    try {
+        ClassPathResource resource = new ClassPathResource("sql/findAll.sql");
+        sql = new String(resource.getInputStream().readAllBytes());
+    } catch (IOException e) {
+        throw new RuntimeException("Errore nel caricamento del file SQL", e);
+    }
         try (Connection conn = dataSource.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
+             ) {
+// Impostiamo i parametri nella query (gli indici partono da 1)
+           
+            stmt.setString(1, referenceDate );
 
+            ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 TNzDpRe record = new TNzDpRe(
                         rs.getLong("id"),
