@@ -11,8 +11,7 @@ import java.util.List;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.constraints.Pattern;
+
 
 @RestController
 @RequestMapping("/api/tnz-dp-re")
@@ -67,6 +66,8 @@ public ResponseEntity<List<TNzDpRe>> getAllRecords(
     List<TNzDpRe> records = tnzDpReService.getAllRecords(referenceDate);
     return ResponseEntity.ok(records);
 }
+
+    // Endpoint per popolare la tabella TNzDpRe dalla tabella Perimetro
 
 @PostMapping("/FillTNzDpRe")
 @Operation(summary = "Fill TNzDpRe table with data from perimeter")    

@@ -3,7 +3,6 @@ package com.example.progettotest.dao;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -134,6 +133,7 @@ public class TNzDpReDao {
         return records;
     }
 
+    // Popola la tabella TNzDpRe dalla tabella Perimetro
     public void fillTNzDpRe(String referenceDate) {
 
           String sql = "";

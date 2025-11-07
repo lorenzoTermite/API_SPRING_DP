@@ -9,7 +9,6 @@ import com.example.progettotest.model.TNzDpRe;
 
 import jakarta.transaction.Transactional;
 
-import java.sql.Date;
 @Service
 public class TNzDpReService {
 
@@ -34,6 +33,7 @@ public class TNzDpReService {
 
 
     // Cancella un record per ID
+    @Transactional
     public void deleteById(Long id) {
         tnzDpReDao.deleteById(id);
     }
@@ -43,6 +43,7 @@ public class TNzDpReService {
         return tnzDpReDao.findAll( referenceDate);
     }
 
+    //popola tabella TNzDpRe dalla tabella Perimetro
 @Transactional
 public void fillTNzDpRe(String referenceDate) {
     tnzDpReDao.fillTNzDpRe(referenceDate);
