@@ -20,14 +20,22 @@ Questo progetto espone delle API REST sviluppate in **Spring Boot** per l’esec
 
 Il progetto segue il classico pattern **3-tier** di Spring Boot:
 
-Swagger UI / Client HTTP
-↓
-Controller (gestisce la richiesta)
-↓
-Service (logica di business e transazioni)
-↓
-Repository / DAO (esecuzione query SQL)
-↓
+Swagger UI / Client HTTP  
+
+↓  
+
+Controller (gestisce la richiesta)  
+
+↓  
+
+Service (logica di business e transazioni)  
+
+↓  
+
+Repository / DAO (esecuzione query SQL)  
+
+↓  
+
 Database Oracle
 
 ## 🌐 Endpoint REST – TNzDpReController
