@@ -39,7 +39,7 @@ Ogni endpoint utilizza il servizio `TNzDpReService`, che a sua volta comunica co
 
 ---
 
-### 1️⃣ **GET /all?id=1**
+### 1️⃣ **GET /all**
 **Descrizione:**  
 Recupera tutti i record della tabella `TNzDpRe` filtrati in base alla data di riferimento (`referenceDate`).
 
