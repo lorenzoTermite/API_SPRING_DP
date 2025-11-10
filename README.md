@@ -7,7 +7,7 @@ L’obiettivo principale è popolare e analizzare la tabella `TNzDpRe` partendo 
 
 ## 🚀 Funzionalità principali
 
-- **Esecuzione di query SQL** tramite DAO e script `.sql`
+- **Esecuzione di query SQL** tramite DAO e script `.sql` presenti in resources/sql
 - **Inserimento automatico di dati** nel DB (es. `fillTNzDpRe`)
 - **Gestione dei parametri dinamici** (es. `referenceDate`)
 - **Documentazione interattiva** tramite **Swagger UI**
