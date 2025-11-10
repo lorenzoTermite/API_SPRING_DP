@@ -29,3 +29,29 @@ Service (logica di business e transazioni)
 Repository / DAO (esecuzione query SQL)
 ↓
 Database Oracle
+
+## 🌐 Endpoint REST – TNzDpReController
+
+La classe `TNzDpReController` espone le API REST per interagire con la tabella `TNzDpRe`.  
+Ogni endpoint utilizza il servizio `TNzDpReService`, che a sua volta comunica con il livello `DAO` per eseguire le query sul database Oracle.
+
+### 📘 Lista degli endpoint principali
+
+---
+
+### 1️⃣ **GET /all/{referenceDate}**
+**Descrizione:**  
+Recupera tutti i record della tabella `TNzDpRe` filtrati in base alla data di riferimento (`referenceDate`).
+
+**Parametri:**
+- `referenceDate` *(string, formato yyyy-MM-dd)* → Data di riferimento.
+
+**Esempio di chiamata Swagger:**  
+GET /all/2024-12-31
+**Operazione SQL eseguita:**
+```sql
+SELECT * FROM TNZDPRE WHERE REFERENCE_DATE = TO_DATE(?, 'YYYY-MM-DD');
+
+
+
+
