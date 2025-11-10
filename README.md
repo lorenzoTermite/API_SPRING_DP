@@ -8,7 +8,9 @@ Questo progetto espone delle API REST sviluppate in **Spring Boot** per l’esec
 ## 🚀 Funzionalità principali
 
 - **Esecuzione di query SQL** tramite DAO e script `.sql` presenti in resources/sql
-- **Inserimento automatico di dati** nel DB (es. `fillTNzDpRe`)
+- **Inserimento automatico di dati** nel DB 
+- **Lettura dati ** nel DB
+- **Cancellazione dati ** nel DB
 - **Gestione dei parametri dinamici** (es. `referenceDate`)
 - **Documentazione interattiva** tramite **Swagger UI**
 - **Strutturazione multilayer (Controller, Service, DAO)**
