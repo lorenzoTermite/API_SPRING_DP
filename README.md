@@ -122,5 +122,5 @@ Esempio di chiamata Swagger:
 [DELETE /5](http://localhost:8080/api/dp/ID_001)
 Operazione SQL eseguita:
 ```sql
-DELETE FROM  user002.dp WHERE id = + ?
+DELETE FROM  user002.dp WHERE id = ?
 ```
