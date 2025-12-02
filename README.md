@@ -18,7 +18,7 @@ Questo progetto espone delle API REST sviluppate in **Spring Boot** per l’esec
 
 Il progetto segue il classico pattern **3-tier** di Spring Boot:
 
-Swagger UI / Client HTTP  
+Swagger UI / Client   
 
 ↓  
 
