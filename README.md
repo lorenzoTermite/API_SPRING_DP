@@ -7,10 +7,9 @@ Questo progetto espone delle API REST sviluppate in **Spring Boot** per l’esec
 
 ## 🚀 Funzionalità principali
 
-- **Esecuzione di query SQL** tramite DAO e script `.sql` presenti in resources/sql
-- **Inserimento lettura e cancellazione dati automatica tramite Swagger** 
+- **Esecuzione di query SQL** tramite DAO e script `.sql` 
+- **Inserimento lettura e cancellazione dati tramite Swagger** 
 - **Gestione dei parametri dinamici** (es. `referenceDate`)
-- **Documentazione interattiva** tramite **Swagger UI**
 - **Strutturazione multilayer (Controller, Service, DAO)**
 
 
