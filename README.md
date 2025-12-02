@@ -38,9 +38,7 @@ Service (logica di business)
 
 Database Oracle
 
-## 🌐 Endpoint REST – 
-Controller
-
+## 🌐 Architettura Controller - Service - Dao
 L’applicazione segue un’architettura a livelli:
 
 Controller
