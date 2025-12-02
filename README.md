@@ -82,7 +82,7 @@ SELECT
     p.VALUE,
     'ACTIVE'
 FROM
-    TSEEUI02.PERIMETRO p
+    user002.PERIMETRO p
     where p.REFERENCE_DATE= TO_DATE(?,'YYYY-MM-DD')
 ```
 3️⃣ GET /descriptions
